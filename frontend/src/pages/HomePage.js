@@ -15,9 +15,7 @@ export default function HomePage() {
   return (
     <>
       <div className='news__data__main py-8 lg:py-20'>
-        <h1 className='text-3xl text-center lg:text-3xl font-bold'>
-          Books 
-        </h1>
+        <h1 className='text-3xl text-center lg:text-3xl font-bold'>Books</h1>
 
         <div className='news__all__data mt-8'>
           <div className='grid grid-cols-1 lg:grid-cols-4 gap-4'>

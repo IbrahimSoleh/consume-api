@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 
 export default function ImageUploader() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -7,11 +7,11 @@ export default function ImageUploader() {
 
   useEffect(() => {
     if (bookData?.image) {
-      const file = new File([], bookData.image, { type: 'image/*' });
+      const file = new File([], bookData.image, { type: "image/*" });
       setSelectedImage(URL.createObjectURL(file));
-      fileInputRef.current.value = '';
+      fileInputRef.current.value = "";
     }
-  // eslint-disable-next-line no-undef
+    // eslint-disable-next-line no-undef
   }, [bookData]);
 
   function handleImageUpload(event) {
@@ -22,13 +22,13 @@ export default function ImageUploader() {
   return (
     <div>
       <input
-        type="file"
-        accept="image/*"
+        type='file'
+        accept='image/*'
         required
         ref={fileInputRef}
         onChange={handleImageUpload}
       />
-      {selectedImage && <img src={selectedImage} alt="Selected Image" />}
+      {selectedImage && <img src={selectedImage} alt='Selected Image' />}
     </div>
   );
 }

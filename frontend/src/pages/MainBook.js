@@ -40,17 +40,11 @@ export default function BookDetails() {
           <div w='300px'>
             <img src={`http://localhost:8000/${book.image}`} alt={book.title} />
           </div>
-          <div className="ml-8">
-            <div className="font-bold">
-              {book.title}
-            </div>
-            <div className="font-bold">
-              {book.author}
-            </div>
-            <div className="font-bold">
-              {book.publisher}
-            </div>
-            <div className="font-bold">
+          <div className='ml-8'>
+            <div className='font-bold'>{book.title}</div>
+            <div className='font-bold'>{book.author}</div>
+            <div className='font-bold'>{book.publisher}</div>
+            <div className='font-bold'>
               {book.year} | {book.pages} pages
             </div>
           </div>
@@ -58,9 +52,7 @@ export default function BookDetails() {
       )}
       {localStorage.getItem("token") && (
         <div>
-          <Button onClick={handleDeleteBook}>
-            Delete
-          </Button>
+          <Button onClick={handleDeleteBook}>Delete</Button>
           <Link to={`/editbook/${id}`}>
             <Button>Edit</Button>
           </Link>

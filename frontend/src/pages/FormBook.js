@@ -12,18 +12,14 @@ export default function BookForm({ bookData }) {
     }
     const formData = new FormData(event.target);
     if (bookData) {
-      try {
-        await editBook(
-          bookData.id,
-          formData.get("title"),
-          formData.get("author"),
-          formData.get("publisher"),
-          parseInt(formData.get("year")),
-          parseInt(formData.get("pages"))
-        );
-      } catch (error) {
-        console.log(error);
-      }
+      await editBook(
+        bookData.id,
+        formData.get("title"),
+        formData.get("author"),
+        formData.get("publisher"),
+        parseInt(formData.get("year")),
+        parseInt(formData.get("pages"))
+      );
       return;
     }
     try {
@@ -47,27 +43,27 @@ export default function BookForm({ bookData }) {
       >
         <div className='mb-4 flex flex-col gap-6'>
           <Input
-            size='lg'
+            size='md'
             label='Name'
             name='title'
             defaultValue={bookData?.title}
           />
           <Input
-            size='lg'
+            size='md'
             label='Author'
             name='author'
             required
             defaultValue={bookData?.author}
           />
           <Input
-            size='lg'
+            size='md'
             label='publisher'
             name='publisher'
             required
             defaultValue={bookData?.publisher}
           />
           <Input
-            size='lg'
+            size='md'
             label='year'
             name='year'
             type='number'
@@ -75,7 +71,7 @@ export default function BookForm({ bookData }) {
           />
           <Input
             type='number'
-            size='lg'
+            size='md'
             label='pages'
             name='pages'
             required
@@ -86,7 +82,7 @@ export default function BookForm({ bookData }) {
             <img src={selectedImage} alt='Selected Image' />
           )}
           <Input
-            size='lg'
+            size='md'
             label='images'
             name='image'
             type='file'
